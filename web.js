@@ -133,7 +133,7 @@ app.post('/users', (req, res) => {
 	});
 	db.connect(function(err) {
 		if (err) throw err;
-		db.query("INSERT INTO `users` (`Id_user`, `Lastname`, `Firstname`, `Password`, `sexe`, `poid`) VALUES ("+ user.id_user+ "," + user.firstName +','+ user.lastName +','+ user.password+','+ ',' + user.sexe+','+user.poids+")" + id, function (err, result) {
+		db.query("INSERT INTO `users` (`Lastname`, `Firstname`, `Password`, `sexe`, `poid`) VALUES ('" + user.lastName +"','"+ user.firstName +"','"+ user.password+"','" + user.sexe+"','"+user.poids+")", function (err, result) {
 		});
 	});
     res.status(200).json(user)
