@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nfaugout-perso/hacking-health-2021.git"
+    "url": "git+https://github.com/thomasliebgott/Mom-bot.git"
   },
-  "author": "Nicolas Faugout",
+  "author": "mom-bot",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nfaugout-perso/hacking-health-2021/issues"
+    "url": "https://github.com/thomasliebgott/Mom-bot/issues"
   },
-  "homepage": "https://github.com/nfaugout-perso/hacking-health-2021#readme",
+  "homepage": "https://github.com/thomasliebgott/Mom-bot#readme",
   "engines": {
     "node": "14.x"
   }
