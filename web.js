@@ -82,6 +82,24 @@ app.get('/bornes/:id', (req,res) => {
 	});
 })
 
+// get users
+app.get('/users', (req,res) => {
+	const db = mysql.createConnection({
+	   host: "sql2.freemysqlhosting.net",
+	   user: "sql2393753",
+	   password: "nT2*qW6!",
+	   database: 'sql2393753'
+	});
+	db.connect(function(err) {
+		if (err) throw err;
+		console.log("Connecté à la base de données MySQL!");
+		db.query("SELECT * FROM users", function (err, result) {
+			console.log(result);
+			res.status(200).json(result);
+		});
+	});
+}) 
+
 //5. Update user
 app.put('/users/:id', (req, res) => {
     const id = parseInt(req.params.id)
