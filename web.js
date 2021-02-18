@@ -64,6 +64,22 @@ app.get('/bornes/1', (req,res) => {
 		});
 	});
 })
+app.get('/bornes/2', (req,res) => {
+	const db = mysql.createConnection({
+	   host: "sql2.freemysqlhosting.net",
+	   user: "sql2393753",
+	   password: "nT2*qW6!",
+	   database: 'sql2393753'
+	});
+	db.connect(function(err) {
+		if (err) throw err;
+		console.log("Connecté à la base de données MySQL!");
+		db.query("SELECT Lieu FROM Bornes WHERE idBorne = 01", function (err, result) {
+			console.log(result);
+			res.status(200).json(result[0]);
+		});
+	});
+})
 
 //5. Update user
 app.put('/users/:id', (req, res) => {
