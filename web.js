@@ -58,7 +58,7 @@ app.get('/bornes/1', (req,res) => {
 	db.connect(function(err) {
 		if (err) throw err;
 		console.log("Connecté à la base de données MySQL!");
-		db.query("SELECT idBorne, Lieu FROM Bornes WHERE idBorne = 01", function (err, result) {
+		db.query("SELECT Lieu FROM Bornes WHERE idBorne = 01", function (err, result) {
 			console.log(result);
 			res.status(200).json(result);
 		});
