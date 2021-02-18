@@ -1,0 +1,27 @@
+{
+  "name": "hacking-health-2021",
+  "version": "1.0.0",
+  "description": "Hacking Health 2021 Sample App",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node web.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfaugout-perso/hacking-health-2021.git"
+  },
+  "author": "Nicolas Faugout",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nfaugout-perso/hacking-health-2021/issues"
+  },
+  "homepage": "https://github.com/nfaugout-perso/hacking-health-2021#readme",
+  "engines": {
+    "node": "14.x"
+  }
+}
