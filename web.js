@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 3000
 const users = require('./users.json')
 const mysql = require('mysql');
 
-
 app
   .use(express.static(path.join(__dirname, 'public')))
   .use(express.json())
@@ -48,6 +47,7 @@ app.get('/bornes', (req,res) => {
 		});
 	});
 })
+
 app.get('/bornes/1', (req,res) => {
 	const db = mysql.createConnection({
 	   host: "sql2.freemysqlhosting.net",
@@ -64,7 +64,8 @@ app.get('/bornes/1', (req,res) => {
 		});
 	});
 })
-app.get('/bornes/2', (req,res) => {
+app.get('/bornes/:id', (req,res) => {
+	const id = parseInt(req.params.id)
 	const db = mysql.createConnection({
 	   host: "sql2.freemysqlhosting.net",
 	   user: "sql2393753",
@@ -74,7 +75,7 @@ app.get('/bornes/2', (req,res) => {
 	db.connect(function(err) {
 		if (err) throw err;
 		console.log("Connecté à la base de données MySQL!");
-		db.query("SELECT Lieu FROM Bornes WHERE idBorne = 01", function (err, result) {
+		db.query("SELECT Lieu FROM Bornes WHERE idBorne = "+id, function (err, result) {
 			console.log(result);
 			res.status(200).json(result[0]);
 		});
